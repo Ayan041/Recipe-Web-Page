@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yummy Yards Recipe App</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="./images/images/logo_image.jpg" alt="Yummy Yards Logo" class="logo-img" />
+                <h1 class="logo">Yummy Yards</h1>
+            </div>
+            <nav>
+                <div class="menu-icon">&#9776;</div>
+                <ul class="nav-list">
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Recipe</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-section">
+            <marquee behavior="" direction="left">
+                <h2>Welcome to <span>Yummy Yards</span> Recipe Collection!</h2>
+            </marquee>
+            <p>Search mouth-watering recipes to satisfy your cravings.</p>
+
+            <form action="" class="search-box">
+                <input type="text" placeholder="Search Recipe" />
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Recipe Section -->
+    <section class="recipes">
+        <h1>Featured Recipes</h1>
+        <div class="recipe-section">
+            <div class="recipe-card">
+                <img src="./images/images/dish-1.jpg" alt="Strawberry Custard" />
+                <h2>Strawberry Custard Recipe</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <a href="recipe.html">View Recipe</a>
+            </div>
+
+            <div class="recipe-card">
+                <img src="./images/images/dish-2.jpg" alt="Spicy Baked Eggs" />
+                <h2>Spicy Baked Eggs Recipe</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <a href="recipe2.html">View Recipe</a>
+            </div>
+
+            <div class="recipe-card">
+                <img src="./images/images/dish-3.jpg" alt="Chicken Kababs" />
+                <h2>Chicken Kababs Recipe</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <a href="recipe3.html">View Recipe</a>
+            </div>
+
+            <div class="recipe-card">
+                <img src="./images/images/dish-4.jpg" alt="Strawberry Custard" />
+                <h2>Fresh Garden Salad</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <a href="recipe4.html">View Recipe</a>
+            </div>
+
+            <div class="recipe-card">
+                <img src="./images/images/dish-5.jpg" alt="Strawberry Custard" />
+                <h2>Poached Eggs Recipe</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <a href="recipe5.html">View Recipe</a>
+            </div>
+
+            <div class="recipe-card">
+                <img src="./images/images/dish-6.jpg" alt="Strawberry Custard" />
+                <h2>Butter Bean Recipe</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <a href="recipe6.html">View Recipe</a>
+            </div>
+
+            <div class="recipe-card">
+                <img src="./images/images/fish-dish.jpg" alt="Strawberry Custard" />
+                <h2>Crispy Lemon Fish</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <a href="recipe7.html">View Recipe</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <p>Yummy Yards &copy; 2025 — All Rights Reserved</p>
+            <p>📧 Email: <a href="mailto:ayanjana300702@gmail.com" class="footer-para">ayanjana300702@gmail.com</a></p>
+            <p>📞 Contact: <a href="tel:98635681909" class="footer-para">9635681909</a></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const menuIcon = document.querySelector('.menu-icon');
+        const navList = document.querySelector('.nav-list');
+
+        menuIcon.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
+
+</body>
+
+</html>

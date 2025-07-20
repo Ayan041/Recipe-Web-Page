@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Detail</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            background: #f8f8f8;
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+                url(./images/images/dish-6.jpg) no-repeat center center/cover;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: 60px;
+            width: 100%;
+            background: #222121;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .logo {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        nav {
+            position: relative;
+        }
+
+        .nav-list li {
+            list-style: none;
+        }
+
+        .nav-list li a {
+            font-weight: 500;
+            cursor: pointer;
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.5s ease;
+        }
+
+        .nav-list li a:hover {
+            color: #ff7043;
+        }
+
+        .recipe-detail {
+            width: 90%;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .recipe-detail img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .recipe-detail ul,
+        .recipe-detail ol {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+            padding-left: 20px;
+        }
+
+
+        footer {
+            background: #333;
+            padding: 20px 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .footer-para {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="./images/images/logo_image.jpg" alt="Yummy Yards Logo" class="logo-img" />
+                <h1 class="logo">Yummy Yards</h1>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="recipe-detail">
+        <h1 id="recipe-title">Fresh Garden Salad</h1>
+        <img id="recipe-image" src="./images/images/dish-4.jpg" alt="Garden Salad" />
+
+        <section>
+            <h2>Ingredients</h2>
+            <ul id="ingredients-list">
+                <li>2 cups chopped lettuce (romaine, arugula, or baby spinach)</li>
+                <li>1/2 cup shredded purple cabbage</li>
+                <li>1/2 cup cherry tomatoes (halved)</li>
+                <li>1/4 cup sliced mushrooms</li>
+                <li>1/4 cup diced avocado</li>
+                <li>1/4 cup blueberries</li>
+                <li>1/4 cup raspberries</li>
+                <li>1/4 cup sliced strawberries</li>
+                <li>1/4 cup peach or apple slices</li>
+                <li>1/4 cup green grapes</li>
+                <li>2 tbsp chopped nuts (cashews or almonds)</li>
+                <li>1 tbsp olive oil</li>
+                <li>1 tbsp lemon juice or lime</li>
+                <li>Salt and black pepper to taste</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Preparation Steps</h2>
+            <ol id="steps-list">
+                <li>Wash all vegetables and fruits thoroughly.</li>
+                <li>Chop or slice ingredients as listed.</li>
+                <li>In a large bowl, combine lettuce, cabbage, tomatoes, and other veggies.</li>
+                <li>Top with berries, grapes, avocado, and nuts.</li>
+                <li>Drizzle olive oil and lemon juice over the salad.</li>
+                <li>Toss gently and season with salt and pepper.</li>
+                <li>Serve fresh and chilled.</li>
+            </ol>
+        </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <p>Yummy Yards &copy; 2025 — All Rights Reserved</p>
+            <p>📧 Email: <a href="mailto:ayanjana300702@gmail.com" class="footer-para">ayanjana300702@gmail.com</a></p>
+            <p>📞 Contact: <a href="tel:98635681909" class="footer-para">98635681909</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>

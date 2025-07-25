@@ -115,6 +115,26 @@
             color: #444;
         }
 
+        #prep-video {
+            text-decoration: none;
+            display: inline-block;
+            width: auto;
+            height: auto;
+            background: rgb(245, 37, 9);
+            color: #fff;
+            border: none;
+            padding: 7px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+
+        #prep-video:hover {
+            background-color: #ce380b;
+        }
+
         .contact-container {
             display: flex;
             flex-direction: column;
@@ -210,29 +230,30 @@
     </header>
 
     <main class="recipe-detail">
-        <h1 id="recipe-title">Strawberry Custard</h1>
+        <h1 id="recipe-title">Fresh Garden Salad</h1>
         <img id="recipe-image" src="./images/images/dish-4.jpg" alt="Recipe Image" />
 
         <section>
             <h2>Ingredients</h2>
             <ul id="ingredients-list">
-                <li>1 cup milk</li>
-                <li>1/2 cup sugar</li>
-                <li>1/4 cup custard powder</li>
-                <li>1 cup chopped strawberries</li>
-                <li>1 tsp vanilla essence</li>
+                <li>1 cucumber, sliced</li>
+                <li>1 tomato, diced</li>
+                <li>1/2 onion, sliced</li>
+                <li>1/2 bell pepper, chopped</li>
+                <li>Lemon juice and salt for dressing</li>
             </ul>
         </section>
 
         <section>
             <h2>Preparation Steps</h2>
             <ol id="steps-list">
-                <li>Boil the milk in a saucepan.</li>
-                <li>Mix custard powder with little cold milk and stir well.</li>
-                <li>Add the custard mix to boiling milk while stirring.</li>
-                <li>Add sugar and cook until thick.</li>
-                <li>Add vanilla essence and strawberries. Chill before serving.</li>
+                <li>Chop all vegetables.</li>
+                <li>Toss with lemon juice and salt.</li>
+                <li>Serve chilled.</li>
             </ol>
+        </section>
+        <section>
+            <a href="https://youtu.be/1amLdkPAgqw" id="prep-video" target="_blank">Watch on YouTube</a>
         </section>
     </main>
 
@@ -240,7 +261,7 @@
     <section class="contact-section">
         <div class="contact-container">
             <h2>Contact Us</h2>
-            <form action="#" method="post" class="contact-form">
+            <form action="" method="" class="contact-form">
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" placeholder="John Doe" required>
@@ -258,7 +279,7 @@
                     <textarea id="message" name="message" rows="5" placeholder="Write your message here..."
                         required></textarea>
                 </div>
-                <button type="submit">Send Message</button>
+                <button type="submit" onclick="alert('Submitted Successfully!')">Send Message</button>
             </form>
         </div>
     </section>

@@ -1,1 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Detail</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+                url(./images/images/dish-6.jpg) no-repeat center center/cover;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: 60px;
+            width: 100%;
+            background: #222121;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .logo {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        nav {
+            position: relative;
+        }
+
+        .nav-list li {
+            list-style: none;
+        }
+
+        .nav-list li a {
+            font-weight: 500;
+            cursor: pointer;
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.5s ease;
+        }
+
+        .nav-list li a:hover {
+            color: #ff7043;
+        }
+
+        .recipe-detail {
+            width: 90%;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .recipe-detail img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .recipe-detail ul,
+        .recipe-detail ol {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+            padding-left: 20px;
+        }
+
+        /*Contact Section */
+        .contact-section {
+            background: #fff;
+            padding: 60px 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #444;
+        }
+
+        #prep-video {
+            text-decoration: none;
+            display: inline-block;
+            width: auto;
+            height: auto;
+            background: rgb(245, 37, 9);
+            color: #fff;
+            border: none;
+            padding: 7px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+
+        #prep-video:hover {
+            background-color: #ce380b;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .contact-form .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #ff7043;
+            outline: none;
+        }
+
+        .contact-form .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .contact-form button {
+            grid-column: 1 / -1;
+            padding: 12px 20px;
+            background-color: #ff7043;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #e64a19;
+        }
+
+        @media (max-width: 600px) {
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        footer {
+            background: #333;
+            padding: 20px 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .footer-para {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="./images/images/logo_image.jpg" alt="Yummy Yards Logo" class="logo-img" />
+                <h1 class="logo">Yummy Yards</h1>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="recipe-detail">
+        <h1 id="recipe-title">Chicken Masala Tikka</h1>
+        <img id="recipe-image" src="./images/images/dish-8.jpeg" alt="Chicken Masala Tikka" />
+
+        <section>
+            <h2>Ingredients</h2>
+            <ul id="ingredients-list">
+                <li>500g chicken pieces</li>
+                <li>1/2 cup yogurt</li>
+                <li>1 tbsp tikka masala</li>
+                <li>1 tsp ginger garlic paste</li>
+                <li>Salt to taste</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Preparation Steps</h2>
+            <ol id="steps-list">
+                <li>Marinate chicken with all ingredients for 1 hour.</li>
+                <li>Grill or bake until cooked.</li>
+                <li>Serve with mint chutney.</li>
+            </ol>
+        </section>
+        <section>
+            <a href="https://youtu.be/BxgK6av-jA8" id="prep-video" target="_blank">Watch on YouTube</a>
+        </section>
+    </main>
+
+    <!--Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <form action="" method="" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Your Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="1234567890" required>
+                </div>
+                <div class="form-group full-width">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Write your message here..."
+                        required></textarea>
+                </div>
+                <button type="submit" onclick="alert('Submitted Successfully!')">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <p>Yummy Yards &copy; 2025 — All Rights Reserved</p>
+            <p>📧 Email: <a href="mailto:ayanjana300702@gmail.com" class="footer-para">ayanjana300702@gmail.com</a></p>
+            <p>📞 Contact: <a href="tel:98635681909" class="footer-para">98635681909</a></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

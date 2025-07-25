@@ -15,7 +15,6 @@ body {
     background: #f8f8f8;
 }
 
-/* Header styles */
 header {
     position: sticky;
     top: 0;
@@ -82,12 +81,10 @@ header {
     transition: color 0.5s ease;
 }
 
-
 .nav-list li a:hover {
     color: #ff7043;
 }
 
-/* Hero Section */
 .hero {
     width: 100%;
     height: auto;
@@ -142,6 +139,16 @@ header {
     cursor: pointer;
 }
 
+#reset-btn {
+    width: 100px;
+    height: 35px;
+    border: none;
+    font-size: 1rem;
+    background: rgb(245, 37, 9);
+    color: #fff;
+    cursor: pointer;
+}
+
 .recipes {
     padding: 50px 0;
 }
@@ -156,17 +163,25 @@ header {
     width: 90%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    column-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding: 20px 0;
 }
 
 .recipe-card {
     background: #fff;
-    margin: 30px 10px;
+    width: 100%;
+    max-width: 280px;
     border-radius: 10px;
     border: 1px solid #ccc;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: scale(0.95);
 }
 
 .recipe-card img {
@@ -174,6 +189,7 @@ header {
     height: 200px;
     object-fit: cover;
 }
+
 
 .recipe-card h2 {
     font-size: 22px;
@@ -207,7 +223,6 @@ footer {
     color: #fff;
 }
 
-/* Responsive Styles */
 @media only screen and (min-width: 768px) {
     .menu-icon {
         display: none;
@@ -223,7 +238,7 @@ footer {
     .nav-list {
         display: none;
         flex-direction: column;
-        background: #222121;
+        background: linear-gradient(rgba(76, 70, 70, 0.75), rgba(76, 70, 70, 0.75));
         width: 100%;
         position: absolute;
         top: 60px;

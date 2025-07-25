@@ -115,6 +115,26 @@
             color: #444;
         }
 
+        #prep-video {
+            text-decoration: none;
+            display: inline-block;
+            width: auto;
+            height: auto;
+            background: rgb(245, 37, 9);
+            color: #fff;
+            border: none;
+            padding: 7px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+
+        #prep-video:hover {
+            background-color: #ce380b;
+        }
+
         .contact-container {
             display: flex;
             flex-direction: column;
@@ -210,29 +230,28 @@
     </header>
 
     <main class="recipe-detail">
-        <h1 id="recipe-title">Strawberry Custard</h1>
+        <h1 id="recipe-title">Poached Eggs</h1>
         <img id="recipe-image" src="./images/images/dish-5.jpg" alt="Recipe Image" />
 
         <section>
             <h2>Ingredients</h2>
             <ul id="ingredients-list">
-                <li>1 cup milk</li>
-                <li>1/2 cup sugar</li>
-                <li>1/4 cup custard powder</li>
-                <li>1 cup chopped strawberries</li>
-                <li>1 tsp vanilla essence</li>
+                <li>2 eggs</li>
+                <li>1 tsp vinegar</li>
+                <li>Water for boiling</li>
             </ul>
         </section>
 
         <section>
             <h2>Preparation Steps</h2>
             <ol id="steps-list">
-                <li>Boil the milk in a saucepan.</li>
-                <li>Mix custard powder with little cold milk and stir well.</li>
-                <li>Add the custard mix to boiling milk while stirring.</li>
-                <li>Add sugar and cook until thick.</li>
-                <li>Add vanilla essence and strawberries. Chill before serving.</li>
+                <li>Boil water with vinegar.</li>
+                <li>Crack egg into water and cook for 3 minutes.</li>
+                <li>Remove gently with slotted spoon.</li>
             </ol>
+        </section>
+        <section>
+            <a href="https://youtu.be/hMqvTgemaBA" id="prep-video" target="_blank">Watch on YouTube</a>
         </section>
     </main>
 
@@ -240,7 +259,7 @@
     <section class="contact-section">
         <div class="contact-container">
             <h2>Contact Us</h2>
-            <form action="#" method="post" class="contact-form">
+            <form action="" method="" class="contact-form">
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" placeholder="John Doe" required>
@@ -258,7 +277,7 @@
                     <textarea id="message" name="message" rows="5" placeholder="Write your message here..."
                         required></textarea>
                 </div>
-                <button type="submit">Send Message</button>
+                <button type="submit" onclick="alert('Submitted Successfully!')">Send Message</button>
             </form>
         </div>
     </section>

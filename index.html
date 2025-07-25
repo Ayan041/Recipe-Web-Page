@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yummy Yards Recipe App</title>
+    <title>Yummy Yards Recipe Web Page</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -21,8 +21,8 @@
                 <div class="menu-icon">&#9776;</div>
                 <ul class="nav-list">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#hero">Recipe</a></li>
+                    <!-- <li><a href="#">About</a></li> -->
+                    <li><a href="#recipe">Recipe</a></li>
                     <li><a href="#footer">Contact</a></li>
                 </ul>
             </nav>
@@ -36,67 +36,78 @@
                 <h2>Welcome to <span>Yummy Yards</span> Recipe Collection!</h2>
             </marquee>
             <p>Search mouth-watering recipes to satisfy your cravings.</p>
-            <form action="" class="search-box">
-                <input type="text" placeholder="Search Recipe" />
+            <form id="search-form" class="search-box">
+                <input type="text" id="search-input" placeholder="Search Recipes............." />
                 <button type="submit">Search</button>
             </form>
+            <button type="button" id="reset-btn" onclick="resetSearch()">Reset</button>
         </div>
     </section>
 
     <!-- Recipe Section -->
-    <section class="recipes">
+    <section class="recipes" id="recipe">
         <h1>Featured Recipes</h1>
         <div class="recipe-section">
-            <!-- Recipe Cards -->
-            <div class="recipe-card">
+            <div class="recipe-card" data-title="strawberry custard">
                 <img src="./images/images/dish-1.jpg" alt="Strawberry Custard" />
                 <h2>Strawberry Custard Recipe</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <p>A sweet and creamy dessert for summer evenings.</p>
                 <a href="recipe.html">View Recipe</a>
             </div>
 
-            <div class="recipe-card">
+            <div class="recipe-card" data-title="spicy baked eggs">
                 <img src="./images/images/dish-2.jpg" alt="Spicy Baked Eggs" />
                 <h2>Spicy Baked Eggs Recipe</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <p>Perfect spicy protein-packed breakfast or brunch.</p>
                 <a href="recipe2.html">View Recipe</a>
             </div>
 
-            <div class="recipe-card">
+            <div class="recipe-card" data-title="chicken kababs">
                 <img src="./images/images/dish-3.jpg" alt="Chicken Kababs" />
                 <h2>Chicken Kababs Recipe</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <p>Chicken kababs are a popular grilled dish made with marinated.</p>
                 <a href="recipe3.html">View Recipe</a>
             </div>
 
-            <div class="recipe-card">
-                <img src="./images/images/dish-4.jpg" alt="Strawberry Custard" />
-                <h2>Fresh Garden Salad</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+            <div class="recipe-card" data-title="fresh garden salad">
+                <img src="./images/images/dish-4.jpg" alt="Fresh Garden Salad" />
+                <h2>Fresh Garden Salad Recipe</h2>
+                <p>Garden salad is a colorful, crunchy, refreshing side dish.</p>
                 <a href="recipe4.html">View Recipe</a>
             </div>
 
-            <div class="recipe-card">
-                <img src="./images/images/dish-5.jpg" alt="Strawberry Custard" />
+            <div class="recipe-card" data-title="poached eggs">
+                <img src="./images/images/dish-5.jpg" alt="Poached Eggs" />
                 <h2>Poached Eggs Recipe</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <p>Poached eggs are soft, delicate, and perfectly runny.</p>
                 <a href="recipe5.html">View Recipe</a>
             </div>
 
-            <div class="recipe-card">
-                <img src="./images/images/dish-6.jpg" alt="Strawberry Custard" />
-                <h2>Butter Bean Recipe</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+            <div class="recipe-card" data-title="butter bean">
+                <img src="./images/images/dish-6.jpg" alt="Butter Bean" />
+                <h2>Butter Bean Masala Recipe</h2>
+                <p>Butter beans simmer slowly with aromatic spices and testy.</p>
                 <a href="recipe6.html">View Recipe</a>
             </div>
 
-            <div class="recipe-card">
-                <img src="./images/images/fish-dish.jpg" alt="Strawberry Custard" />
-                <h2>Crispy Lemon Fish</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+            <div class="recipe-card" data-title="crispy lemon fish">
+                <img src="./images/images/fish-dish.jpg" alt="Crispy Lemon Fish" />
+                <h2>Crispy Lemon Fish Recipe</h2>
+                <p>Fresh herbs coat fish with citrus punch and juicy flavors inside fish.</p>
                 <a href="recipe7.html">View Recipe</a>
             </div>
+
+            <div class="recipe-card" data-title="chicken tikka masala">
+                <img src="./images/images/dish-8.jpeg" alt="Chicken Tikka Masala" />
+                <h2>Chicken Tikka Masala</h2>
+                <p>Yogurt and spices tenderize every chicken piece.</p>
+                <a href="recipe8.html">View Recipe</a>
+            </div>
         </div>
+
+        <p id="no-results" style="text-align:center; display:none; font-size:18px; color:red;">
+            No matching recipes found.
+        </p>
     </section>
 
     <!-- Footer -->
@@ -116,7 +127,37 @@
         menuIcon.addEventListener('click', () => {
             navList.classList.toggle('active');
         });
+
+        const searchForm = document.getElementById('search-form');
+        const searchInput = document.getElementById('search-input');
+        const recipeCards = document.querySelectorAll('.recipe-card');
+        const noResults = document.getElementById('no-results');
+
+        searchForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const query = searchInput.value.toLowerCase().trim();
+            let found = false;
+
+            recipeCards.forEach(card => {
+                const title = card.getAttribute('data-title');
+                if (title.includes(query)) {
+                    card.style.display = ''; // Important: reset to default for grid layout
+                    found = true;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            noResults.style.display = found ? 'none' : 'block';
+        });
+
+        function resetSearch() {
+            searchInput.value = '';
+            recipeCards.forEach(card => card.style.display = '');
+            noResults.style.display = 'none';
+        }
     </script>
+
 
 </body>
 
